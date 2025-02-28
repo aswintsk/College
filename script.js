@@ -455,6 +455,20 @@ function changebg(){
     classs[1].style.boxShadow ="5px 5px 5px rgb(124 150 197)";
 }
 function changetext(){
-    classs[0].innerHTML="New Text"
+    classs[0].innerHTML="New Text";
 }
-console.log(classs)
+function changebtn(){
+    let btn = document.getElementsByTagName("button");
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].style.background = 'rgb(143, 21, 21)';
+    }
+}
+
+function changeinp(){
+    let inp= document.getElementById("chkbox");
+    inp.type="radio";
+}
+function changeinp2(){
+    let inp= document.getElementById("chkbox");
+    inp.setAttribute("type","checkbox");
+}
