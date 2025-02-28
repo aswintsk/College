@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        h1{
+            color: #f1f1f1;
+        }
+        input{
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+        button{
+            /* width: 100%; */
+            background-color: rgb(7, 107, 173);
+            padding: 10px;
+            margin-top: 10px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            color: aliceblue;
+            transition: .1s ease-in-out;
+        }
+        button:hover{
+            background-color: #0f488a;
+            scale: .95;
+            cursor: pointer;
+        }
+        div{
+            background-color: rgb(125 146 157);
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgb(102, 113, 122);
+        }
+        p{
+            background-color: aliceblue;
+            padding: 10px;
+            color: #2a2b2d;
+            border-radius: 4px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   <div>
+        <h1>Find Length</h1>
+        <input type="text" name="" id="txt" placeholder="Enter string">
+        <button type="submit" onclick="length_str()">Find Length</button>
+        <p id="otp" class="hidden"></p>
+   </div>
+   <div>
+        <br><br>
+        <h1>Concatinate</h1>
+        <input type="text" name="" id="txt1" placeholder="Enter text">
+        <br><br>
+        <input type="text" name="" id="txt2" placeholder="Enter text">
+        <button type="submit" onclick="concat()">Concatinate</button>
+        <p id="result" class="hidden"></p>
+   </div>
+   <div>
+        <br><br>
+        <h1>Slicing</h1>
+        <input type="text" name="" id="txt3" placeholder="Enter string">
+        <button type="submit" onclick="slice_str()">Slice</button>
+        <p id="result2" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Replace String</h1>
+        <input type="text" name="" id="txt4" placeholder="Original string">
+        <br><br>
+        <input type="text" name="" id="txt5" placeholder="What to replace in string">
+        <br><br>
+        <input type="text" name="" id="txt6" placeholder="Enter what to insert instead ">
+        <button type="submit" onclick="replace_str()">Replace</button>
+        <p id="result3" class="hidden"></p>
+        <br><br>
+   </div>
+    <div>
+        <h1>TO UPPER OR LOWER</h1>
+        <input type="text" name="" id="txt7" placeholder="Enter String ">
+        <button type="submit" onclick="to_uppercase()">To Upper</button>
+        <button type="submit" onclick="to_lowercase()">To Lower</button>
+        <p id="result4" class="hidden"></p>
+        <br><br>
+    </div>
+   <div>
+        <br><br>
+        <h1>Trim Spaces</h1>
+        <input type="text" name="" id="txt8" placeholder="Enter String ">
+        <button type="submit" onclick="to_trim()">Trim</button>
+        <p id="result5" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Adult OR Not</h1>
+        <input type="number" name="" id="txt9" placeholder="Enter Age ">
+        <button type="submit" onclick="find_adult()">Check Eligibilty</button>
+        <p id="result6" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Find Your Grade</h1>
+        <input type="number" name="" id="txt10" placeholder="Enter marks ">
+        <button type="submit" onclick="find_grade()">Submit</button>
+        <p id="result7" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Find About Your Day</h1>
+        <input type="text" name="" id="txt11" placeholder="Eg:monday,tuesday etc.">
+        <button type="submit" onclick="day_detail()">Submit</button>
+        <p id="result8" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Print Numbers </h1>
+        <input type="number" name="" id="txt12" placeholder="Enter max value">
+        <button type="submit" onclick="loop()">Submit</button>
+        <p id="result9" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Reverse String </h1>
+        <input type="text" name="" id="txt13" placeholder="Enter String">
+        <button type="submit" onclick="reverse_str()">Submit</button>
+        <p id="result10" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Find Vowels </h1>
+        <input type="text" name="" id="txt14" placeholder="Enter String">
+        <button type="submit" onclick="count_v()">Submit</button>
+        <p id="result11" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Find Largest</h1>
+        <input type="number" name="" id="txt15" placeholder="Enter number">
+        <br><br>
+        <input type="number" name="" id="txt16" placeholder="Enter number">
+        <br><br>
+        <input type="number" name="" id="txt17" placeholder="Enter number">
+        <button type="submit" onclick="find_l()">Submit</button>
+        <p id="result12" class="hidden"></p>
+        <br><br>
+   </div>
+
+   <div>
+        <br><br>
+        <h1>Login</h1>
+        <input type="text" name="" id="txt18" placeholder="Enter username">
+        <br><br>
+        <input type="password" name="" id="txt19" placeholder="Enter password">
+        <br><br>
+        <button type="submit" onclick="login()">Login</button>
+        <p id="result13" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Calculate</h1>
+        <input type="number" name="" id="txt20" placeholder="Enter number">
+        <br><br>
+        <input type="number" name="" id="txt21" placeholder="Enter number">
+        <br><br>
+        <button type="submit" onclick="calculate()">Calculate</button>
+        <p id="result14" class="hidden"></p>
+        <p id="result15" class="hidden"></p>
+        <p id="result16" class="hidden"></p>
+        <p id="result17" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Find Fibonacci Series</h1>
+        <!-- <input type="number" name="" id="txt22" placeholder="Enter number"> -->
+        <!-- <br><br> -->
+        <button type="submit" onclick="fibo()">Find Fibonacci</button>
+        <p id="result18" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Multiplication and Squares</h1>
+        <!-- <input type="number" name="" id="txt22" placeholder="Enter number"> -->
+        <!-- <br><br> -->
+        <button type="submit" onclick="mult()">Find</button>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>GCD AND LCM</h1>
+        <input type="number" name="" id="txt22" placeholder="Enter number">
+        <br><br>
+        <input type="number" name="" id="txt23" placeholder="Enter number">
+        <br><br>
+        <button type="submit" onclick="GCD()" >GCD</button>
+        <button type="submit" onclick="LCM()" >LCM</button>
+        <p id="result19" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Income Calculate</h1>
+        <input type="number" name="" id="txt24" placeholder="Enter number">
+        <br><br>
+        <button type="submit" onclick="find_income()" >Submit</button>
+        <p id="result20" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Count h2 and h3 tags</h1>
+        <h2>h2 tag1</h2>
+        <h2>h2 tag2</h2>
+        <h3>h3 tag1</h3>
+        <h3>h3 tag2</h3>
+        <button type="submit" onclick="counth()" >Count</button>
+        <p id="result21" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+        <br><br>
+        <h1>Change Color dynamically</h1>
+        <h2 id="changecolor">Change color of this text</h2>
+        <input type="color" onchange="setcolor()" id="color" style="width: 10%;border: none;border-radius: 0;padding: 0;">
+        <p id="result21" class="hidden"></p>
+        <br><br>
+   </div>
+   <div>
+     <h1>Window Properties</h1>
+     <button  onclick="openwindow()">Create Window</button>
+     <button type="submit" onclick="moveto()">Move To</button>
+     <button type="submit" onclick="moveby()">Move By 100</button>
+     <button type="submit" onclick="resizewindow()">Resize To</button>
+     <button type="submit" onclick="resizebywindow()">Resize By</button>
+     <button type="submit" onclick="closewindow()">Close Window</button>
+   </div>
+   <div>
+     <h1>Largest of 3</h1>
+     <input type="number" name="" id="n1" placeholder="Number 1">
+     <input type="number" name="" id="n2" placeholder="Number 2">
+     <input type="number" name="" id="n3" placeholder="Number 3">
+     <button type="submit" onclick="large()">Submit</button>
+     <p id="result22" class="hidden"></p>
+   </div> 
+   <div class="class1">
+     class 1
+   </div>
+   <div class="class1">
+     class 1
+   </div>
+   <div>
+   <button type="submit" onclick="changebg()">change background-color of class1 </button>
+   <button type="submit" onclick="changetext()">change text of class1 </button>
+   </div>
+   <div id="output"></div>
+   <div id="output2"></div>
+   <div id="output3"></div>
+   <div id="output4"></div>
+   <div id="output5"></div>
+   <script src="script.js"></script>
+</body>
+</html>
